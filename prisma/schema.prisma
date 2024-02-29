@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model gifts {
+  id          Int       @id @default(autoincrement())
+  produto     String    @db.VarChar(100)
+  nome        String?   @db.VarChar(100)
+  code        String?   @db.VarChar(45)
+  description String?   @db.Text
+  links       Json?
+  img         String?   @db.VarChar(100)
+  status      Int?
+  created     DateTime @default(now())
+  user_id     Int  
+  user        user      @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_gifts_user1")
+
+  @@index([user_id], map: "fk_gifts_user1_idx")
+}
+
+model invities {
+  id          Int       @id @default(autoincrement())
+  code        String    @db.VarChar(45)
+  name        String?   @db.VarChar(100)
+  identity    String?   @db.VarChar(45)
+  fone        String?   @db.VarChar(45)
+  invitiescol String?   @db.VarChar(45)
+  status      Int?
+  creted      DateTime  @default(now())
+  dateconfirm DateTime? @db.DateTime(0)
+  user_id     Int
+  user        user      @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_invities_user")
+
+  @@index([user_id], map: "fk_invities_user_idx")
+}
+
+model user {
+  id       Int        @id @default(autoincrement())
+  username String?    @db.VarChar(45)
+  password String?    @db.VarChar(200)
+  status   Int?
+  creatad  DateTime  @default(now())
+  gifts    gifts[]
+  invities invities[]
+}
