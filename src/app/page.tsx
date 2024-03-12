@@ -11,7 +11,7 @@ export default function Home() {
      
       <div className={styles.center}>
         <div className={styles.container}>
-          <p>{"Ale's Party"}</p>
+          <p>{"Quarentou de casa nova"}</p>
         </div>        
       </div>
       <ConfirmFormCard />
