@@ -6,8 +6,10 @@
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   background-image: url("/fundo.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
+  min-height: 100%;
+  background-position: center center;
   --primary-glow: conic-gradient(
     from 180deg at 50% 50%,
     #16abff33 0deg,

@@ -25,8 +25,8 @@ const CardItem = ({ ...props }: CardProps) => {
             >
                 <DialogContent>
                     <DialogContentText style={{textAlign:"center"}}>
-                       Obrigado por selecionar este produto. <br/>
-                       *Precisamos do código do convite para reserva.                      
+                       Huauaua. Vou amar receber este presente! <br/>
+                       *Agora só informar o codigo do convite..                      
                     </DialogContentText>
                     <TextField
                         autoFocus
@@ -48,14 +48,14 @@ const CardItem = ({ ...props }: CardProps) => {
     }
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }} style={{backgroundColor: "#fd0"}}>
             <Grid container spacing={2} >
                 <Grid item sm={4}>
-                    <img src='note.jpeg' style={{ width: "180px" }} />
+                    <img src='note.jpeg' style={{ width: "180px", margin:'auto'}} />
                 </Grid>
                 <Grid item >
                     <div>
-                        <h1 style={{ textAlign: "left" }}>Notebook hp 01919</h1>
+                        <h1 style={{ textAlign: "left" }}>Taça de Água Diamante Amber Metalizada</h1>
                         <div style={{ float: "right" }}>
                             {
                                 props.statusSelect ? (<img src='check.png' style={{ width: "50px" }} />) : (
@@ -66,15 +66,15 @@ const CardItem = ({ ...props }: CardProps) => {
                         </div>
                     </div>
 
-                    <p style={{ textAlign: "left" }}>Descrição dskajdkjwdkqjw dsw dwdwdw dwdwdwdw dqwdqwdqwdqwdqwdqw</p>
+                    <p style={{ textAlign: "left" }}> Taças de vidro para beber água.</p>
                     <br />
                     <br />
                     <p style={{ textAlign: "left" }}>
-                        <a href=''>ww. magalu.com.br</a> <br />
+                        <a href=''>www.magalu.com.br</a> <br />
                         www.amaricanas.com
                     </p>
                     <div style={{ float: "right" }}>
-                        <Button variant="contained" disabled={props.statusSelect} onClick={()=>handleClickOpen()}>Selecionado</Button>
+                        <Button variant="contained" disabled={props.statusSelect} onClick={()=>handleClickOpen()}>Selecionar</Button>
                     </div>
 
                 </Grid>
